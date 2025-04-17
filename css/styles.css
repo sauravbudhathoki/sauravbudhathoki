@@ -1,3 +1,4 @@
+/* Reset and core */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,41 +7,78 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #fdfdfd;
   color: #333;
+  line-height: 1.6;
 }
 
 .container {
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
-header {
-  background: #222;
-  color: #fff;
-  padding: 40px 0;
+/* Header Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/bg.jpg') center/cover no-repeat;
+  color: white;
   text-align: center;
+  padding: 100px 20px;
 }
 
-.profile-pic {
+.hero-content .profile-pic {
   width: 150px;
-  height: 150px;
   border-radius: 50%;
-  object-fit: cover;
   margin-bottom: 20px;
 }
 
-h1, h2 {
+.hero-content h1 {
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-.about, .contact {
-  margin-top: 40px;
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #007BFF;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
+.cta-btn:hover {
+  background: #0056b3;
+}
+
+/* Section Styling */
+section {
+  margin-top: 60px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Projects */
+.project-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 45%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
@@ -48,9 +86,8 @@ form {
 }
 
 input, textarea {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  width: 100%;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
@@ -58,22 +95,29 @@ input, textarea {
 button {
   background: #007BFF;
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  font-size: 16px;
   border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 button:hover {
   background: #0056b3;
 }
 
+/* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 30px 20px;
   background: #222;
   color: #fff;
+  margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-list {
+    flex-direction: column;
+  }
 }
