@@ -3,39 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>John Doe - Web Developer</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-content">
-      <img src="brp.jpg" alt="Profile Picture" class="profile-pic"/>
-      <h1>Hello, Myself Saurav</h1>
-      <p>Backend Developer | Designer | Coder</p>
+  <header class="hero">
+    <div class="container hero-content">
+      <img src="avataaars.svg" alt="Saurav Budhathoki" class="profile-pic" />
+      <h1>Hello, I'm <span class="typed-text"></span></h1>
+      <p>Turning ideas into real-world web solutions.</p>
+      <a href="#contact" class="cta-btn">Contact Me</a>
     </div>
   </header>
 
   <section class="about container">
     <h2>About Me</h2>
-    <p>I'm a passionate Backend developer with experience in Java, HTML, CSS, JavaScript, and PHP. I love creating clean, user-friendly websites.</p>
+    <p>I’m a full-stack developer with a focus on user-centric design and clean, scalable code. My stack includes HTML, CSS, JavaScript, PHP, and modern frameworks.</p>
   </section>
 
-  <section class="contact container">
+  <section class="projects container">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A responsive, SEO-friendly website showcasing my skills and work.</p>
+      </div>
+      <div class="project">
+        <h3>Task Manager</h3>
+        <p>A PHP-based CRUD application with user authentication and task tracking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact container" id="contact">
     <h2>Contact Me</h2>
     <form action="contact.php" method="POST" onsubmit="return validateForm()">
       <input type="text" name="name" id="name" placeholder="Your Name" required />
       <input type="email" name="email" id="email" placeholder="Your Email" required />
       <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <button type="submit">Send Message</button>
+      <p id="form-message"></p>
     </form>
-    <p id="form-message"></p>
   </section>
 
   <footer>
-    <p>© 2025 Saurav Budhathoki. All rights reserved.</p>
+    <p>© 2025 Saurav Budhathoki. Built with ❤️</p>
   </footer>
 
   <script src="scripts.js"></script>
 </body>
 </html>
-
