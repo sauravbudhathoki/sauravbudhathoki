@@ -10,5 +10,5 @@ function validateForm() {
   }
 
   return true;
-}
+} 
 
