@@ -1,55 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saurav Budhathoki - Backend Developer</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurav Budhathoki | Java Backend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container hero-content">
-      <img src="avataaars.svg" alt="Saurav Budhathoki" class="profile-pic" />
-      <h1>Hello, I'm <span class="typed-text"></span></h1>
-      <p>Turning ideas into real-world web solutions.</p>
-      <a href="#contact" class="cta-btn">Contact Me</a>
-    </div>
-  </header>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
 
-  <section class="about container">
-    <h2>About Me</h2>
-    <p>I’m a full-stack developer with a focus on user-centric design and clean, scalable code. My stack includes HTML, CSS, JavaScript, PHP, and modern frameworks.</p>
-  </section>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Saurav<span>Budhathoki</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume.pdf" download class="resume-btn">Resume</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
 
-  <section class="projects container">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>A responsive, SEO-friendly website showcasing my skills and work.</p>
-      </div>
-      <div class="project">
-        <h3>Task Manager</h3>
-        <p>A PHP-based CRUD application with user authentication and task tracking.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animated-text">Hi, I'm <span>Saurav Budhathoki</span></h1>
+                <p class="tagline">Backend Developer | Java Specialist</p>
+                <div class="social-icons">
+                    <a href="https://github.com/sauravbudhathoki" target="_blank" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/saurav-budhathoki-a50324281/" target="_blank" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com" target="_blank" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://leetcode.com" target="_blank" data-tooltip="LeetCode"><i class="fas fa-code"></i></a>
+                </div>
+                <div class="cta-container">
+                    <a href="#contact" class="cta-btn">Get in Touch</a>
+                    <a href="#projects" class="cta-btn secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="contact container" id="contact">
-    <h2>Contact Me</h2>
-    <form action="contact.php" method="POST" onsubmit="return validateForm()">
-      <input type="text" name="name" id="name" placeholder="Your Name" required />
-      <input type="email" name="email" id="email" placeholder="Your Email" required />
-      <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="form-message"></p>
-    </form>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="95">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="90">
+                    <i class="fas fa-server"></i>
+                    <h3>Spring Boot</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="85">
+                    <i class="fas fa-database"></i>
+                    <h3>Hibernate</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="85">
+                    <i class="fas fa-cloud"></i>
+                    <h3>REST APIs</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Saurav Budhathoki. Built with ❤️</p>
-  </footer>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Java Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="E-commerce Backend">
+                    <div class="project-info">
+                        <h3>E-commerce Backend System</h3>
+                        <p>Robust backend system built with Spring Boot and MySQL</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>Hibernate</span>
+                        </div>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Banking System">
+                    <div class="project-info">
+                        <h3>Banking Management System</h3>
+                        <p>Secure transaction system with JWT authentication</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                            <span>JPA</span>
+                            <span>Spring Security</span>
+                        </div>
+                        <a href="#" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="scripts.js"></script>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-wrapper">
+                <form id="contactForm" action="send_email.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-btn">
+                        <span class="btn-text">Send Message</span>
+                        <div class="loading-dots">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Kathmandu, Nepal</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@saurav.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+977 9876543210</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
