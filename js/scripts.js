@@ -1,47 +1,48 @@
-// Form validation
-function validateForm() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const formMessage = document.getElementById("form-message");
+document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
-  if (!name || !email || !message) {
-    formMessage.textContent = "All fields are required.";
-    formMessage.style.color = "red";
-    return false;
-  }
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
 
-  formMessage.textContent = "";
-  return true;
-}
+    // Skill Progress Animation
+    document.querySelectorAll('.skill-card').forEach(card => {
+        const progress = card.dataset.skill + '%';
+        card.querySelector('.progress-bar').style.width = progress;
+    });
 
-// Typing Effect
-const typedText = document.querySelector(".typed-text");
-const phrases = ["Saurav Budhathoki", "a Web Developer", "a Problem Solver"];
-let index = 0;
-let letter = 0;
-let currentPhrase = "";
-let isDeleting = false;
+    // Form Loading Animation
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+        const btn = contactForm.querySelector('button');
+        btn.disabled = true;
+        btn.querySelector('.btn-text').style.display = 'none';
+        btn.querySelector('.loading-dots').style.display = 'flex';
+    });
 
-function type() {
-  currentPhrase = phrases[index];
-  typedText.textContent = currentPhrase.substring(0, letter);
+    // Mobile Menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
 
-  if (!isDeleting && letter < currentPhrase.length) {
-    letter++;
-  } else if (isDeleting && letter > 0) {
-    letter--;
-  }
-
-  if (letter === currentPhrase.length) {
-    isDeleting = true;
-    setTimeout(type, 1000);
-    return;
-  } else if (letter === 0) {
-    isDeleting = false;
-    index = (index + 1) % phrases.length;
-  }
-
-  setTimeout(type, isDeleting ? 50 : 100);
-}
-type();
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
